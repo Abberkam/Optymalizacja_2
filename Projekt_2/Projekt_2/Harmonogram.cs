@@ -17,7 +17,7 @@ namespace Projekt_2
         private int[] harmonogramWynik;     //harmonogram o najktórszym Cmax z przeglądniętych
         private int[] harmonogramNat;       //[0,1,...,_liczbaZadań-1]     
         private int[][] bufor;              //przeliczane czasy
-        private int[][] dane;               //czasy wykonania zadań[] na maszynach[]
+        public int[][] dane;               //czasy wykonania zadań[] na maszynach[]
         private Random rand;
 
         public int[] harmonogram;
@@ -105,6 +105,10 @@ namespace Projekt_2
         private int liczDlugosc(int[] wektor)
         {
             int i, j;
+
+            for (i = 0; i <= liczbaZadan; i++)
+                for (j = 0; j <= liczbaMaszyn; j++)
+                    bufor[i][j] = 0;
 
             for (i = 1; i < liczbaZadan + 1; i++)
             {
@@ -247,6 +251,41 @@ namespace Projekt_2
                 }
             }
             harmonogramWynik.CopyTo(harmonogram, 0);
+        }
+
+        //wyświetla wykres Gantta w oknie za pomocą formsa Chart
+        public void liczGantta(Chart wykres)
+        {
+            string nazwa;   //nazwa serii
+            System.Windows.Forms.DataVisualization.Charting.Chart gantt = new System.Windows.Forms.DataVisualization.Charting.Chart();
+
+            gantt.Series.Clear();
+
+            gantt.ChartAreas.Add("ChartArea1"); //parametry charta
+            gantt.Legends.Add("Legend1");       //parametry charta
+
+            for (int i = 0; i < liczbaZadan; i++)
+            {
+                nazwa = "zad " + harmonogram[i].ToString();
+
+                gantt.Series.Add(nazwa);
+                gantt.Series[nazwa].ChartType = System.Windows.Forms.DataVisualization.
+                    Charting.SeriesChartType.RangeBar;
+
+                if (i == 0)
+                    for (int j = 1; j <= liczbaMaszyn; j++)
+                    {
+                        gantt.Series[nazwa].Points.Add(bufor[0 + 1][j - 1], bufor[0 + 1][j]);
+                    }
+                else
+                {
+                    for (int j = 1; j <= liczbaMaszyn; j++)
+                    {
+                        gantt.Series[nazwa].Points.Add(Math.Max(bufor[i+1][j-1],bufor[i][j]), bufor[i + 1][j]);
+                    }
+                }
+            }
+            wykres.pokazGantta(gantt, bufor[liczbaZadan][liczbaMaszyn]);
         }
     }
 }

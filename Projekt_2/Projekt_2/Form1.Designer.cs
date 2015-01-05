@@ -62,6 +62,7 @@
             this.liczbaProb = new System.Windows.Forms.TextBox();
             this.textBoxWynik = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.btnGantt = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -415,11 +416,23 @@
             this.label11.TabIndex = 36;
             this.label11.Text = "WYNIK:";
             // 
+            // btnGantt
+            // 
+            this.btnGantt.Enabled = false;
+            this.btnGantt.Location = new System.Drawing.Point(145, 204);
+            this.btnGantt.Name = "btnGantt";
+            this.btnGantt.Size = new System.Drawing.Size(124, 24);
+            this.btnGantt.TabIndex = 37;
+            this.btnGantt.Text = "Gantt";
+            this.btnGantt.UseVisualStyleBackColor = true;
+            this.btnGantt.Click += new System.EventHandler(this.gantt_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(404, 285);
+            this.Controls.Add(this.btnGantt);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBoxWynik);
             this.Controls.Add(this.label10);
@@ -445,6 +458,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.wczytajLED);
+            this.MaximumSize = new System.Drawing.Size(420, 323);
+            this.MinimumSize = new System.Drawing.Size(420, 323);
             this.Name = "Form1";
             this.Text = "Projekt nr 2";
             this.panel1.ResumeLayout(false);
@@ -489,6 +504,7 @@
         private System.Windows.Forms.TextBox liczbaProb;
         private System.Windows.Forms.TextBox textBoxWynik;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnGantt;
     }
 }
 

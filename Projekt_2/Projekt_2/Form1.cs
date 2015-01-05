@@ -12,6 +12,7 @@ namespace Projekt_2
 {
     public partial class Form1 : Form
     {
+        Chart wykres = new Chart();
         private Button a;       //aktywny przycisk
         private Harmonogram har;
         private int metoda=3;   //wybór metody mieszania zadań w harmonogamie
@@ -22,6 +23,7 @@ namespace Projekt_2
             InitializeComponent();
             har = new Harmonogram();
             resetParametrow();
+            wykres.Show();
         }
 
         //resetuje parametry algorytmu SA
@@ -45,6 +47,7 @@ namespace Projekt_2
                 textBoxHarmonogram.Text = har.wyswietl(har.harmonogram);
                 optymalizuj.Enabled = true;
                 reset.Enabled = true;
+                btnGantt.Enabled = true;
                 textBoxWynik.Clear();
             }
         }
@@ -170,5 +173,10 @@ namespace Projekt_2
             }
         }
 
+
+        private void gantt_Click(object sender, EventArgs e)
+        {
+            har.liczGantta(wykres);
+        }
     }
 }
