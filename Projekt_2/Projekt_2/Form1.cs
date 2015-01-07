@@ -30,8 +30,8 @@ namespace Projekt_2
         private void resetParametrow()
         {
             t0.Text = "1000";
-            tK.Text = "0,001";
-            sigma.Text = "0,9999";
+            tK.Text = "0,01";
+            sigma.Text = "0,99";
             liczbaProb.Text = "1";
         }
 
@@ -48,7 +48,42 @@ namespace Projekt_2
                 optymalizuj.Enabled = true;
                 reset.Enabled = true;
                 btnGantt.Enabled = true;
+                resetParam.Enabled = true;
                 textBoxWynik.Clear();
+
+                switch (a.Text)
+                {
+                    case "1":
+                        textBoxWynik0.Text = "47";
+                        break;
+                    case "2":
+                        textBoxWynik0.Text = "637";
+                        break;
+                    case "3":
+                        textBoxWynik0.Text = "1163";
+                        break;
+                    case "4":
+                        textBoxWynik0.Text = "1805";
+                        break;
+                    case "5":
+                        textBoxWynik0.Text = "1137";
+                        break;
+                    case "6":
+                        textBoxWynik0.Text = "1471";
+                        break;
+                    case "7":
+                        textBoxWynik0.Text = "2397";
+                        break;
+                    case "8":
+                        textBoxWynik0.Text = "5967";
+                        break;
+                    case "9":
+                        textBoxWynik0.Text = "6369";
+                        break;
+                    default:
+                        textBoxWynik0.Clear();
+                        break;
+                }
             }
         }
 
@@ -77,6 +112,8 @@ namespace Projekt_2
             liczbaProb.Enabled = false;
             optymalizuj.Enabled = false;
             reset.Enabled = false;
+            btnGantt.Enabled = false;
+            resetParam.Enabled = false;
 
             try
             {
@@ -96,6 +133,8 @@ namespace Projekt_2
             liczbaProb.Enabled = true;
             optymalizuj.Enabled = true;
             reset.Enabled = true;
+            btnGantt.Enabled = true;
+            resetParam.Enabled = true;
         }
 
         //zmiana metody za pomocą radioButton
@@ -177,6 +216,11 @@ namespace Projekt_2
         private void gantt_Click(object sender, EventArgs e)
         {
             har.liczGantta(wykres);
+        }
+
+        private void resetParam_Click(object sender, EventArgs e)
+        {
+            resetParametrow();
         }
     }
 }

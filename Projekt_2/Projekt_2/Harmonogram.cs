@@ -202,11 +202,12 @@ namespace Projekt_2
 
             int delta;
             double x, p;
+            float temp = t0;
 
             for (int i = 0; i < liczbaProb; i++)
             {
                 harmonogram.CopyTo(tmpNajlepszy, 0);
-                while(t0>tK)
+                while(temp>tK)
                 {
                     harmonogram.CopyTo(tmp, 0);
                     switch (metoda)
@@ -247,8 +248,9 @@ namespace Projekt_2
                             tmp.CopyTo(harmonogram, 0);
                         }
                     }
-                    t0 = t0 / (1 + sigma * t0);
+                    temp = sigma * temp;
                 }
+                temp = t0;
             }
             harmonogramWynik.CopyTo(harmonogram, 0);
         }

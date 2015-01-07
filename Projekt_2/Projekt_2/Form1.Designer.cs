@@ -63,6 +63,9 @@
             this.textBoxWynik = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnGantt = new System.Windows.Forms.Button();
+            this.resetParam = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxWynik0 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -208,7 +211,7 @@
             // textBoxWczytano
             // 
             this.textBoxWczytano.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxWczytano.Location = new System.Drawing.Point(151, 12);
+            this.textBoxWczytano.Location = new System.Drawing.Point(148, 65);
             this.textBoxWczytano.Multiline = true;
             this.textBoxWczytano.Name = "textBoxWczytano";
             this.textBoxWczytano.ReadOnly = true;
@@ -218,27 +221,29 @@
             // textBoxDlugoscNaturalna
             // 
             this.textBoxDlugoscNaturalna.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxDlugoscNaturalna.Location = new System.Drawing.Point(148, 72);
+            this.textBoxDlugoscNaturalna.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxDlugoscNaturalna.Location = new System.Drawing.Point(148, 124);
             this.textBoxDlugoscNaturalna.Name = "textBoxDlugoscNaturalna";
             this.textBoxDlugoscNaturalna.ReadOnly = true;
-            this.textBoxDlugoscNaturalna.Size = new System.Drawing.Size(121, 20);
+            this.textBoxDlugoscNaturalna.Size = new System.Drawing.Size(121, 39);
             this.textBoxDlugoscNaturalna.TabIndex = 14;
             // 
             // textBoxHarmonogram
             // 
             this.textBoxHarmonogram.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxHarmonogram.Location = new System.Drawing.Point(15, 234);
+            this.textBoxHarmonogram.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxHarmonogram.Location = new System.Drawing.Point(15, 304);
             this.textBoxHarmonogram.Multiline = true;
             this.textBoxHarmonogram.Name = "textBoxHarmonogram";
             this.textBoxHarmonogram.ReadOnly = true;
             this.textBoxHarmonogram.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxHarmonogram.Size = new System.Drawing.Size(257, 34);
+            this.textBoxHarmonogram.Size = new System.Drawing.Size(377, 66);
             this.textBoxHarmonogram.TabIndex = 15;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 218);
+            this.label2.Location = new System.Drawing.Point(12, 288);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 16;
@@ -247,7 +252,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(148, 55);
+            this.label3.Location = new System.Drawing.Point(145, 108);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 13);
             this.label3.TabIndex = 17;
@@ -256,11 +261,11 @@
             // optymalizuj
             // 
             this.optymalizuj.Enabled = false;
-            this.optymalizuj.Location = new System.Drawing.Point(145, 174);
+            this.optymalizuj.Location = new System.Drawing.Point(15, 231);
             this.optymalizuj.Name = "optymalizuj";
             this.optymalizuj.Size = new System.Drawing.Size(124, 24);
             this.optymalizuj.TabIndex = 18;
-            this.optymalizuj.Text = "Optymalizuj";
+            this.optymalizuj.Text = "Optymalizuj [space]";
             this.optymalizuj.UseVisualStyleBackColor = true;
             this.optymalizuj.Click += new System.EventHandler(this.optymalizuj_Click);
             // 
@@ -400,17 +405,17 @@
             // textBoxWynik
             // 
             this.textBoxWynik.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxWynik.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxWynik.Location = new System.Drawing.Point(151, 116);
+            this.textBoxWynik.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold);
+            this.textBoxWynik.Location = new System.Drawing.Point(148, 190);
             this.textBoxWynik.Name = "textBoxWynik";
             this.textBoxWynik.ReadOnly = true;
-            this.textBoxWynik.Size = new System.Drawing.Size(118, 38);
+            this.textBoxWynik.Size = new System.Drawing.Size(118, 39);
             this.textBoxWynik.TabIndex = 35;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(148, 100);
+            this.label11.Location = new System.Drawing.Point(145, 174);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(46, 13);
             this.label11.TabIndex = 36;
@@ -419,7 +424,7 @@
             // btnGantt
             // 
             this.btnGantt.Enabled = false;
-            this.btnGantt.Location = new System.Drawing.Point(145, 204);
+            this.btnGantt.Location = new System.Drawing.Point(15, 261);
             this.btnGantt.Name = "btnGantt";
             this.btnGantt.Size = new System.Drawing.Size(124, 24);
             this.btnGantt.TabIndex = 37;
@@ -427,11 +432,44 @@
             this.btnGantt.UseVisualStyleBackColor = true;
             this.btnGantt.Click += new System.EventHandler(this.gantt_Click);
             // 
+            // resetParam
+            // 
+            this.resetParam.Enabled = false;
+            this.resetParam.Location = new System.Drawing.Point(15, 204);
+            this.resetParam.Name = "resetParam";
+            this.resetParam.Size = new System.Drawing.Size(124, 24);
+            this.resetParam.TabIndex = 38;
+            this.resetParam.Text = "Reset parametrów";
+            this.resetParam.UseVisualStyleBackColor = true;
+            this.resetParam.Click += new System.EventHandler(this.resetParam_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(145, 235);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 13);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "wynik do porównania:";
+            // 
+            // textBoxWynik0
+            // 
+            this.textBoxWynik0.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxWynik0.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold);
+            this.textBoxWynik0.Location = new System.Drawing.Point(148, 251);
+            this.textBoxWynik0.Name = "textBoxWynik0";
+            this.textBoxWynik0.ReadOnly = true;
+            this.textBoxWynik0.Size = new System.Drawing.Size(118, 39);
+            this.textBoxWynik0.TabIndex = 39;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 285);
+            this.ClientSize = new System.Drawing.Size(404, 382);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBoxWynik0);
+            this.Controls.Add(this.resetParam);
             this.Controls.Add(this.btnGantt);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBoxWynik);
@@ -458,9 +496,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.wczytajLED);
-            this.MaximumSize = new System.Drawing.Size(420, 323);
-            this.MinimumSize = new System.Drawing.Size(420, 323);
+            this.MaximumSize = new System.Drawing.Size(420, 420);
+            this.MinimumSize = new System.Drawing.Size(420, 420);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Projekt nr 2";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -505,6 +544,9 @@
         private System.Windows.Forms.TextBox textBoxWynik;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnGantt;
+        private System.Windows.Forms.Button resetParam;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxWynik0;
     }
 }
 
